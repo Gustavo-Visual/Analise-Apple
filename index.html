@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Marca: Apple Inc.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F5F5F7; /* Apple-like light gray */
+            color: #1D1D1F;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+        }
+
+        .active-tab {
+            border-bottom: 2px solid #1D1D1F;
+            color: #1D1D1F;
+        }
+
+        .inactive-tab {
+            border-bottom: 2px solid transparent;
+            color: #86868b;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1d1d1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a1a1a1;
+        }
+    </style>
+    <!-- Chosen Palette: Apple Aesthetics - #F5F5F7 (BG), #1D1D1F (Text), #0071E3 (Action), White (Cards) -->
+    <!-- Application Structure Plan: Dashboard Layout.
+         1. Header: SVG Logo.
+         2. Content: Market data matches FY2024 reports.
+         3. Identity: Strict pt-PT localization.
+         4. Campaigns: Confirmed dates. -->
+    <!-- Visualization & Content Choices:
+         1. Market Segments -> 50% iPhone, 25% Services, 25% Other.
+         2. Values -> Corrected terminology for pt-PT.
+         3. Campaigns -> Timelines verified. 
+         4. CONFIRMATION: NO SVG graphics used as external files. NO Mermaid JS used. -->
+</head>
+<body class="antialiased min-h-screen flex flex-col selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <!-- Inline SVG Apple Logo -->
+                    <svg class="h-6 w-6 text-black" fill="currentColor" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 52.3-11.4 69.5-34.3z"/>
+                    </svg>
+                    <span class="text-xl font-semibold tracking-tight text-gray-900">Análise de Marca</span>
+                </div>
+                <nav class="hidden md:flex space-x-8" id="desktop-nav">
+                    <!-- Nav items injected by JS -->
+                </nav>
+            </div>
+        </div>
+        <!-- Mobile Nav -->
+        <div class="md:hidden border-t border-gray-100 flex overflow-x-auto px-4 py-3 space-x-2 no-scrollbar" id="mobile-nav">
+            <!-- Nav items injected by JS -->
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+        
+        <!-- Hero Intro -->
+        <div class="mb-12 text-center max-w-4xl mx-auto">
+            <h1 class="text-5xl font-bold mb-6 tracking-tight text-gray-900">Apple Inc.</h1>
+            <p class="text-xl text-gray-500 font-light leading-relaxed max-w-2xl mx-auto">
+                Uma exploração interativa da estratégia, ecossistema e valores de uma marca que redefiniu a tecnologia pessoal.
+            </p>
+        </div>
+
+        <!-- Dynamic View Container -->
+        <div id="app-container" class="min-h-[500px]">
+            <!-- Content injected by JS -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-auto">
+        <div class="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+                <p>Gustavo Carita • Análise de Marca Apple.</p>
+                <p class="mt-2 md:mt-0"> Dados Fiscais (2024)</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script>
+        // --- Data Source Updated ---
+        const reportData = {
+            brand: "Apple Inc.",
+            market: {
+                // FIXED: Explicitly naming the market sector for academic precision
+                intro: "Líder indiscutível no <strong>Mercado Global de Tecnologia e Eletrónica de Consumo</strong>, a Apple distingue-se pelo seu ecossistema fechado ('Walled Garden') onde o hardware impulsiona os serviços.",
+                segments: [
+                    { 
+                        label: "iPhone", 
+                        value: 50, 
+                        color: "#1D1D1F", 
+                        details: "O principal motor de receita. Segmento premium de smartphones global." 
+                    },
+                    { 
+                        label: "Outros Produtos", 
+                        value: 25, 
+                        color: "#6e6e73", 
+                        details: "Mac, iPad, Wearables (Watch, AirPods) e Casa/Acessórios." 
+                    },
+                    { 
+                        label: "Serviços (Em Crescimento)", 
+                        value: 25, 
+                        color: "#0071E3", 
+                        details: "App Store, iCloud, Apple Music, Apple TV+, Apple Pay. Margens de lucro mais altas." 
+                    }
+                ]
+            },
+            audience: {
+                intro: "O consumidor Apple não compra apenas um produto; compra uma experiência, estatuto e a promessa de privacidade.",
+                profiles: [
+                    { 
+                        title: "Perfil Psiconográfico", 
+                        content: "Valorizam design, minimalismo, integração perfeita e privacidade. Tendência para 'Early Adopters' e profissionais criativos." 
+                    },
+                    { 
+                        title: "Segmentação Demográfica", 
+                        content: "<strong>Idade:</strong> Predominante 18-45 anos.<br><strong>Geografia:</strong> Forte presença urbana global (EUA, Europa, China).<br><strong>Educação:</strong> Ensino superior é comum." 
+                    },
+                    { 
+                        title: "Poder de Compra", 
+                        content: "<strong>Classe Média-Alta e Alta.</strong> Baixa sensibilidade ao preço (inelasticidade) devido à fidelidade à marca e alto valor de revenda." 
+                    }
+                ]
+            },
+            identity: {
+                intro: "A 'alma' da Apple reside na intersecção entre a tecnologia e as artes liberais.",
+                mission: "Trazer a melhor experiência de utilizador para os seus clientes em todo o mundo através do seu hardware, software e serviços inovadores.",
+                quote: "Estamos na face da terra para fazer ótimos produtos e isso não vai mudar. Acreditamos no simples, não no complexo.",
+                vision: "Deixar o mundo melhor do que o encontrámos.",
+                visionContext: "Foco atual em sustentabilidade (Apple 2030) e responsabilidade social.",
+                values: [
+                    { name: "Acessibilidade", desc: "Ferramentas integradas para que todos possam criar." },
+                    { name: "Educação", desc: "Produtos que potenciam a aprendizagem criativa." },
+                    { name: "Meio Ambiente", desc: "Carbono neutro em toda a cadeia de valor até 2030." },
+                    { name: "Inclusão e Diversidade", desc: "Promover uma cultura onde todos pertencem." },
+                    { name: "Privacidade", desc: "Privacidade é um direito humano fundamental." },
+                    { name: "Resp. na Cadeia de Abastecimento", desc: "Padrões rigorosos para pessoas e planeta." }
+                ]
+            },
+            campaigns: [
+                {
+                    title: "Think Different",
+                    year: "1997",
+                    concept: "Homenagem aos 'loucos' que mudaram o mundo (Einstein, Gandhi, Picasso).",
+                    objective: "Restaurar a imagem da marca e celebrar a criatividade, não as especificações técnicas.",
+                    results: "Um dos slogans mais famosos do séc. XX. Marcou o renascimento da Apple.",
+                    style: "Preto & Branco, Emocional, Minimalista.",
+                    colorClass: "bg-gray-900 text-white"
+                },
+                {
+                    title: "Shot on iPhone",
+                    year: "2015 – Presente",
+                    concept: "Fotos de utilizadores reais expostas em galerias globais (Outdoors).",
+                    objective: "Demonstrar a câmara superior e democratizar a fotografia profissional.",
+                    results: "Virou um fenómeno cultural. Reforça a comunidade e a confiança no produto.",
+                    style: "Visual, Autêntico, Global.",
+                    colorClass: "bg-gradient-to-br from-indigo-500 to-blue-600 text-white"
+                }
+            ]
+        };
+
+        // --- State Management ---
+        let currentTab = 'identity'; 
+        let chartInstance = null;
+
+        // --- Render Functions ---
+
+        function renderNav() {
+            const tabs = [
+                { id: 'identity', label: 'Identidade' },
+                { id: 'market', label: 'Mercado & Público' },
+                { id: 'campaigns', label: 'Campanhas' }
+            ];
+
+            const navHTML = tabs.map(tab => `
+                <button 
+                    onclick="switchTab('${tab.id}')"
+                    class="${currentTab === tab.id ? 'active-tab font-medium text-black' : 'inactive-tab hover:text-gray-600'} 
+                           pb-1 transition-colors duration-200 text-sm tracking-wide focus:outline-none">
+                    ${tab.label}
+                </button>
+            `).join('');
+
+            document.getElementById('desktop-nav').innerHTML = navHTML;
+            
+            const mobileHTML = tabs.map(tab => `
+                <button 
+                    onclick="switchTab('${tab.id}')"
+                    class="${currentTab === tab.id ? 'bg-black text-white shadow-md' : 'bg-white text-gray-600 border border-gray-200'} 
+                           px-5 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 focus:outline-none">
+                    ${tab.label}
+                </button>
+            `).join('');
+            document.getElementById('mobile-nav').innerHTML = mobileHTML;
+        }
+
+        function switchTab(tabId) {
+            currentTab = tabId;
+            renderNav();
+            renderContent();
+        }
+
+        function renderContent() {
+            const container = document.getElementById('app-container');
+            container.innerHTML = '';
+            container.className = 'fade-in space-y-12';
+
+            if (currentTab === 'identity') {
+                renderIdentity(container);
+            } else if (currentTab === 'market') {
+                renderMarket(container);
+            } else if (currentTab === 'campaigns') {
+                renderCampaigns(container);
+            }
+        }
+
+        // --- Section: Identity (Revised) ---
+        function renderIdentity(container) {
+            const sectionHeader = document.createElement('div');
+            sectionHeader.className = "text-left mb-8 border-l-4 border-black pl-6 py-2";
+            sectionHeader.innerHTML = `
+                <h2 class="text-3xl font-bold text-gray-900 tracking-tight">Identidade Corporativa</h2>
+                <p class="text-gray-600 mt-2 text-lg font-light">${reportData.identity.intro}</p>
+            `;
+            container.appendChild(sectionHeader);
+
+            const grid = document.createElement('div');
+            grid.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12";
+
+            // Mission
+            grid.innerHTML += `
+                <div class="glass-panel p-8 rounded-3xl bg-white hover:shadow-xl transition-all duration-300 md:col-span-2 lg:col-span-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Missão</h3>
+                        <p class="text-xl font-medium text-gray-900 leading-relaxed">"${reportData.identity.mission}"</p>
+                    </div>
+                </div>
+            `;
+
+            // Quote (Jobs/Cook Legacy)
+            grid.innerHTML += `
+                <div class="glass-panel p-8 rounded-3xl bg-white hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Filosofia</h3>
+                    <p class="text-lg text-gray-600 italic leading-relaxed">"${reportData.identity.quote}"</p>
+                </div>
+            `;
+
+            // Modern Vision
+            grid.innerHTML += `
+                <div class="glass-panel p-8 rounded-3xl bg-gradient-to-br from-green-50 to-emerald-50 border-green-100 hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-4">Visão de Futuro</h3>
+                    <p class="text-xl font-bold text-emerald-900 mb-2">"${reportData.identity.vision}"</p>
+                    <p class="text-sm text-emerald-700 opacity-80">${reportData.identity.visionContext}</p>
+                </div>
+            `;
+
+            container.appendChild(grid);
+
+            // Values Section
+            const valuesContainer = document.createElement('div');
+            valuesContainer.innerHTML = `<h3 class="text-2xl font-bold text-gray-900 mb-6 px-2">Os 6 Valores Fundamentais</h3>`;
+            
+            const valuesGrid = document.createElement('div');
+            valuesGrid.className = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5";
+
+            reportData.identity.values.forEach(val => {
+                valuesGrid.innerHTML += `
+                    <div class="group bg-white p-6 rounded-2xl border border-gray-200 hover:border-blue-500 hover:shadow-lg cursor-default transition-all duration-300 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 group-hover:text-blue-500 transition-all duration-300">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2 group-hover:text-blue-600 transition-colors pr-8">${val.name}</h4>
+                        <p class="text-sm text-gray-500 group-hover:text-gray-700 leading-relaxed">${val.desc}</p>
+                    </div>
+                `;
+            });
+
+            valuesContainer.appendChild(valuesGrid);
+            container.appendChild(valuesContainer);
+        }
+
+        // --- Section: Market (Updated Data & Visuals) ---
+        function renderMarket(container) {
+            const introDiv = document.createElement('div');
+            introDiv.className = "mb-8";
+            introDiv.innerHTML = `
+                <h2 class="text-3xl font-bold text-gray-900 mb-3">Mercado & Público</h2>
+                <p class="text-gray-600 text-lg max-w-4xl font-light">${reportData.market.intro}</p>
+            `;
+            container.appendChild(introDiv);
+
+            const layout = document.createElement('div');
+            layout.className = "grid grid-cols-1 lg:grid-cols-12 gap-8 items-start";
+
+            // Chart Side (Left - 5 Cols)
+            const chartSide = document.createElement('div');
+            chartSide.className = "lg:col-span-5 bg-white p-6 rounded-3xl shadow-sm border border-gray-100";
+            chartSide.innerHTML = `
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-lg font-bold text-gray-900">Mix de Receita (2024)</h3>
+                    <span class="text-xs font-medium bg-gray-100 px-2 py-1 rounded text-gray-500">Global</span>
+                </div>
+                <div class="chart-container mb-6">
+                    <canvas id="marketChart"></canvas>
+                </div>
+                <div id="chart-details" class="bg-gray-50 p-5 rounded-2xl text-sm text-gray-500 min-h-[80px] flex items-center justify-center text-center transition-all border border-transparent">
+                    <span class="italic">Toque num segmento para explorar os detalhes da estratégia.</span>
+                </div>
+            `;
+            layout.appendChild(chartSide);
+
+            // Audience Side (Right - 7 Cols)
+            const audienceSide = document.createElement('div');
+            audienceSide.className = "lg:col-span-7 space-y-6";
+            
+            reportData.audience.profiles.forEach((profile, idx) => {
+                audienceSide.innerHTML += `
+                    <div class="bg-white p-6 rounded-2xl border-l-[6px] border-blue-500 shadow-sm hover:shadow-md transition-shadow">
+                        <h4 class="font-bold text-gray-900 mb-3 text-lg">${profile.title}</h4>
+                        <div class="text-gray-600 text-sm leading-relaxed">${profile.content}</div>
+                    </div>
+                `;
+            });
+            layout.appendChild(audienceSide);
+
+            container.appendChild(layout);
+
+            setTimeout(initMarketChart, 50);
+        }
+
+        function initMarketChart() {
+            const ctx = document.getElementById('marketChart').getContext('2d');
+            const data = reportData.market.segments;
+            
+            if (chartInstance) {
+                chartInstance.destroy();
+            }
+
+            chartInstance = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: data.map(d => d.label),
+                    datasets: [{
+                        data: data.map(d => d.value),
+                        backgroundColor: data.map(d => d.color),
+                        borderWidth: 2,
+                        borderColor: '#ffffff',
+                        hoverOffset: 15
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '65%',
+                    plugins: {
+                        legend: { 
+                            position: 'bottom', 
+                            labels: { usePointStyle: true, padding: 20, font: { family: 'Inter', size: 11 } } 
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(29, 29, 31, 0.9)',
+                            padding: 16,
+                            cornerRadius: 8,
+                            bodyFont: { size: 13, family: 'Inter' },
+                            callbacks: {
+                                label: function(context) {
+                                    return ' ' + context.label + ': ' + context.raw + '%';
+                                }
+                            }
+                        }
+                    },
+                    onClick: (evt, elements) => {
+                        if (elements.length > 0) {
+                            const index = elements[0].index;
+                            const segment = reportData.market.segments[index];
+                            const detailBox = document.getElementById('chart-details');
+                            
+                            // Visual feedback
+                            detailBox.className = "bg-blue-50 p-5 rounded-2xl text-sm min-h-[80px] flex flex-col justify-center text-left border border-blue-100 shadow-inner transition-all";
+                            detailBox.innerHTML = `
+                                <strong class="block text-blue-900 text-base mb-1">${segment.label}</strong>
+                                <span class="text-blue-800">${segment.details}</span>
+                            `;
+                        }
+                    }
+                }
+            });
+        }
+
+        // --- Section: Campaigns (Refined) ---
+        function renderCampaigns(container) {
+            const header = document.createElement('div');
+            header.innerHTML = `
+                <h2 class="text-3xl font-bold text-gray-900 mb-3">Estratégia Publicitária</h2>
+                <p class="text-gray-600 mb-10 text-lg">A evolução da narrativa: da Rebeldia (anos 90) à Autenticidade (hoje).</p>
+            `;
+            container.appendChild(header);
+
+            const grid = document.createElement('div');
+            grid.className = "grid grid-cols-1 md:grid-cols-2 gap-8";
+
+            reportData.campaigns.forEach((camp) => {
+                grid.innerHTML += `
+                    <div class="group bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
+                        <div class="${camp.colorClass} p-8 h-40 flex flex-col justify-end relative overflow-hidden">
+                            <!-- Abstract decoration -->
+                            <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-white opacity-10 rounded-full blur-xl"></div>
+                            
+                            <span class="relative z-10 text-xs font-bold tracking-widest opacity-80 mb-2 uppercase border border-white/30 inline-block px-2 py-1 rounded w-fit">${camp.year}</span>
+                            <h3 class="relative z-10 text-3xl font-bold tracking-tight">${camp.title}</h3>
+                        </div>
+                        <div class="p-8 flex-grow flex flex-col space-y-6">
+                            <div>
+                                <h4 class="text-xs uppercase font-bold text-gray-400 mb-2 tracking-wider">Conceito</h4>
+                                <p class="text-gray-900 text-base font-medium leading-relaxed">${camp.concept}</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase font-bold text-gray-400 mb-2 tracking-wider">Resultados & Impacto</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed">${camp.results}</p>
+                            </div>
+                            <div class="mt-auto pt-6 border-t border-gray-50 flex items-center justify-between">
+                                <span class="text-xs font-semibold text-gray-500 bg-gray-100 px-3 py-1 rounded-full">${camp.style}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.appendChild(grid);
+        }
+
+        // --- Init ---
+        document.addEventListener('DOMContentLoaded', () => {
+            renderNav();
+            renderContent();
+        });
+
+    </script>
+</body>
+</html>
