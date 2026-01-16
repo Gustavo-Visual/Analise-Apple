@@ -170,7 +170,7 @@
                 profiles: [
                     { 
                         title: "Perfil Psiconográfico", 
-                        content: "Valorizam design, minimalismo, integração perfeita e privacidade. Tendência para 'Early Adopters' e profissionais criativos." 
+                        content: "Valorizam design, minimalismo, integração perfeita e privacidade. Tendência para 'Early Adopters' e profissionais criativos. " 
                     },
                     { 
                         title: "Segmentação Demográfica", 
@@ -205,7 +205,8 @@
                     objective: "Restaurar a imagem da marca e celebrar a criatividade, não as especificações técnicas.",
                     results: "Um dos slogans mais famosos do séc. XX. Marcou o renascimento da Apple.",
                     style: "Preto & Branco, Emocional, Minimalista.",
-                    colorClass: "bg-gray-900 text-white"
+                    colorClass: "bg-gray-900 text-white",
+                    videoId: "BPX9v8F547k"
                 },
                 {
                     title: "Shot on iPhone",
@@ -214,9 +215,110 @@
                     objective: "Demonstrar a câmara superior e democratizar a fotografia profissional.",
                     results: "Virou um fenómeno cultural. Reforça a comunidade e a confiança no produto.",
                     style: "Visual, Autêntico, Global.",
-                    colorClass: "bg-gradient-to-br from-indigo-500 to-blue-600 text-white"
+                    colorClass: "bg-gradient-to-br from-indigo-500 to-blue-600 text-white",
+                    videoId: "-sDgnNXFPkg"
                 }
-            ]
+            ],
+            necessity: {
+                intro: "A Apple identifica e atende necessidades fundamentais do consumidor moderno, transformando-as em experiências premium.",
+                needs: [
+                    {
+                        title: "Necessidade de Simplicidade",
+                        description: "Em um mundo cada vez mais complexo, a Apple oferece produtos intuitivos que funcionam sem necessidade de manuais extensos. O design minimalista reduz a fricção entre o utilizador e a tecnologia.",
+                        examples: "Interface iOS, design unibody do MacBook, configuração inicial simplificada."
+                    },
+                    {
+                        title: "Necessidade de Integração",
+                        description: "O ecossistema Apple resolve o problema da fragmentação tecnológica. Dispositivos que comunicam perfeitamente entre si, criando uma experiência fluida e contínua.",
+                        examples: "Handoff, Continuity, AirDrop, iCloud Sync, Universal Clipboard."
+                    },
+                    {
+                        title: "Necessidade de Privacidade e Segurança",
+                        description: "Num contexto de crescente preocupação com dados pessoais, a Apple posiciona-se como guardiã da privacidade, oferecendo encriptação end-to-end e transparência no uso de dados.",
+                        examples: "Face ID, Touch ID, App Tracking Transparency, Private Relay, iCloud Private."
+                    },
+                    {
+                        title: "Necessidade de Status e Identidade",
+                        description: "Os produtos Apple funcionam como símbolos de status, criatividade e pertença a uma comunidade de 'early adopters' e profissionais criativos.",
+                        examples: "Design distintivo reconhecível, posicionamento premium, comunidade de utilizadores leais."
+                    },
+                    {
+                        title: "Necessidade de Criatividade e Produtividade",
+                        description: "Ferramentas profissionais integradas que permitem criar conteúdo de alta qualidade sem barreiras técnicas complexas.",
+                        examples: "Final Cut Pro, Logic Pro, Procreate (iPad), GarageBand, iMovie."
+                    },
+                    {
+                        title: "Necessidade de Sustentabilidade",
+                        description: "Consumidores modernos valorizam marcas responsáveis. A Apple responde com compromissos ambientais concretos e materiais reciclados.",
+                        examples: "Apple 2030 (carbono neutro), materiais reciclados, programas de reciclagem."
+                    }
+                ]
+            },
+            characteristics: {
+                intro: "As características distintivas que definem a identidade e os produtos Apple.",
+                categories: [
+                    {
+                        category: "Design",
+                        items: [
+                            "Design minimalista e clean",
+                            "Estética premium com atenção aos detalhes",
+                            "Uso de materiais de alta qualidade (alumínio, vidro, cerâmica)",
+                            "Formas orgânicas e ergonómicas",
+                            "Consistência visual em todo o ecossistema"
+                        ]
+                    },
+                    {
+                        category: "Tecnologia",
+                        items: [
+                            "Chips proprietários (A-series, M-series) com desempenho líder",
+                            "Integração hardware-software otimizada",
+                            "Inovação em sensores e câmaras",
+                            "Baterias de longa duração",
+                            "Tecnologias de segurança avançadas (Face ID, Touch ID)"
+                        ]
+                    },
+                    {
+                        category: "Experiência do Utilizador",
+                        items: [
+                            "Interface intuitiva e acessível",
+                            "Animações fluidas e transições suaves",
+                            "Feedback háptico preciso",
+                            "Acessibilidade integrada (VoiceOver, Switch Control)",
+                            "Onboarding simplificado"
+                        ]
+                    },
+                    {
+                        category: "Ecossistema",
+                        items: [
+                            "Integração perfeita entre dispositivos",
+                            "Sincronização em tempo real via iCloud",
+                            "Continuidade entre Mac, iPhone, iPad, Watch",
+                            "App Store com curadoria rigorosa",
+                            "Serviços integrados (Apple Pay, Apple Music, iCloud)"
+                        ]
+                    },
+                    {
+                        category: "Sustentabilidade",
+                        items: [
+                            "Compromisso carbono neutro até 2030",
+                            "Uso de materiais reciclados",
+                            "Energia renovável em operações",
+                            "Programas de reciclagem (Apple Trade In)",
+                            "Embalagens reduzidas e recicláveis"
+                        ]
+                    },
+                    {
+                        category: "Privacidade",
+                        items: [
+                            "Encriptação end-to-end",
+                            "Processamento local de dados (on-device)",
+                            "App Tracking Transparency",
+                            "Privacy Nutrition Labels",
+                            "Dados não vendidos a terceiros"
+                        ]
+                    }
+                ]
+            }
         };
 
         // --- State Management ---
@@ -229,6 +331,8 @@
             const tabs = [
                 { id: 'identity', label: 'Identidade' },
                 { id: 'market', label: 'Mercado & Público' },
+                { id: 'necessity', label: 'Necessidade' },
+                { id: 'characteristics', label: 'Características' },
                 { id: 'campaigns', label: 'Campanhas' }
             ];
 
@@ -269,6 +373,10 @@
                 renderIdentity(container);
             } else if (currentTab === 'market') {
                 renderMarket(container);
+            } else if (currentTab === 'necessity') {
+                renderNecessity(container);
+            } else if (currentTab === 'characteristics') {
+                renderCharacteristics(container);
             } else if (currentTab === 'campaigns') {
                 renderCampaigns(container);
             }
@@ -449,7 +557,70 @@
             });
         }
 
-        // --- Section: Campaigns (Refined) ---
+        // --- Section: Necessity ---
+        function renderNecessity(container) {
+            const header = document.createElement('div');
+            header.className = "mb-8";
+            header.innerHTML = `
+                <h2 class="text-3xl font-bold text-gray-900 mb-3">Necessidades que a Apple Atende</h2>
+                <p class="text-gray-600 text-lg max-w-4xl font-light">${reportData.necessity.intro}</p>
+            `;
+            container.appendChild(header);
+
+            const grid = document.createElement('div');
+            grid.className = "grid grid-cols-1 md:grid-cols-2 gap-6";
+
+            reportData.necessity.needs.forEach((need) => {
+                grid.innerHTML += `
+                    <div class="bg-white p-8 rounded-2xl border-l-4 border-blue-500 shadow-sm hover:shadow-lg transition-all duration-300">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">${need.title}</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">${need.description}</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100">
+                            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Exemplos</p>
+                            <p class="text-sm text-gray-500 italic">${need.examples}</p>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.appendChild(grid);
+        }
+
+        // --- Section: Characteristics ---
+        function renderCharacteristics(container) {
+            const header = document.createElement('div');
+            header.className = "mb-8";
+            header.innerHTML = `
+                <h2 class="text-3xl font-bold text-gray-900 mb-3">Características Distintivas</h2>
+                <p class="text-gray-600 text-lg max-w-4xl font-light">${reportData.characteristics.intro}</p>
+            `;
+            container.appendChild(header);
+
+            const grid = document.createElement('div');
+            grid.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6";
+
+            reportData.characteristics.categories.forEach((category) => {
+                grid.innerHTML += `
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all duration-300">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100">${category.category}</h3>
+                        <ul class="space-y-2">
+                            ${category.items.map(item => `
+                                <li class="text-sm text-gray-600 flex items-start">
+                                    <svg class="h-4 w-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span>${item}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                `;
+            });
+
+            container.appendChild(grid);
+        }
+
+        // --- Section: Campaigns (Refined with Videos) ---
         function renderCampaigns(container) {
             const header = document.createElement('div');
             header.innerHTML = `
@@ -472,9 +643,39 @@
                             <h3 class="relative z-10 text-3xl font-bold tracking-tight">${camp.title}</h3>
                         </div>
                         <div class="p-8 flex-grow flex flex-col space-y-6">
+                            ${camp.videoId ? `
+                                <div class="w-full rounded-xl overflow-hidden bg-gray-900 relative group cursor-pointer" onclick="window.open('https://www.youtube.com/watch?v=${camp.videoId}', '_blank')">
+                                    <img 
+                                        src="https://img.youtube.com/vi/${camp.videoId}/maxresdefault.jpg" 
+                                        alt="${camp.title} - Thumbnail"
+                                        class="w-full aspect-video object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+                                        loading="lazy"
+                                        onerror="this.src='https://img.youtube.com/vi/${camp.videoId}/hqdefault.jpg'"
+                                    />
+                                    <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
+                                        <div class="bg-red-600 rounded-full p-4 group-hover:scale-110 transition-transform shadow-2xl">
+                                            <svg class="w-12 h-12 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M8 5v14l11-7z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="absolute bottom-3 right-3">
+                                        <div class="bg-black/70 backdrop-blur-sm px-3 py-1.5 rounded flex items-center gap-2 text-white text-xs">
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                            </svg>
+                                            <span>Ver no YouTube</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            ` : ''}
                             <div>
                                 <h4 class="text-xs uppercase font-bold text-gray-400 mb-2 tracking-wider">Conceito</h4>
                                 <p class="text-gray-900 text-base font-medium leading-relaxed">${camp.concept}</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase font-bold text-gray-400 mb-2 tracking-wider">Objetivo</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed">${camp.objective}</p>
                             </div>
                             <div>
                                 <h4 class="text-xs uppercase font-bold text-gray-400 mb-2 tracking-wider">Resultados & Impacto</h4>
